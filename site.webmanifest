@@ -1,0 +1,19 @@
+{
+    "name": "Joan Barruel Portfolio",
+    "short_name": "Joan Portfolio",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#cfa0f5",
+    "background_color": "#F4F4F9",
+    "display": "standalone"
+}
