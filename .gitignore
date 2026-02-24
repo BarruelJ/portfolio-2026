@@ -1,0 +1,6 @@
+# Paramètres vs Code
+.vscode/
+
+# Fichiers
+.DS_Store
+Thumbs.db
