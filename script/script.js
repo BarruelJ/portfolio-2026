@@ -316,7 +316,8 @@ const projectsData = {
         image: 'images/projet1.webp',
         tags: ['GSAP', 'ScrollTrigger', 'Lenis'],
         description: 'Site vitrine personnel avec animations GSAP avancées, effet parallaxe et scroll fluide via Lenis.',
-        link: '#'
+        link: 'https://portfolio-2026-lac-tau.vercel.app/',
+        github: 'https://github.com/BarruelJ/portfolio-2026'
     },
     2: {
         title: 'Site Vitrine',
@@ -332,13 +333,32 @@ const projectsData = {
         image: 'images/projet3.webp',
         tags: ['TKinter', 'Reportlab', 'Python'],
         description: "Générateur d'étiquettes et de documents PDF dynamiques avec interface graphique TKinter.",
-        link: '#'
+        link: '#',
+        github: 'https://github.com/BarruelJ/PrintLoader'
     },
 };
 
 function openModal(projectId) {
     const project = projectsData[projectId];
     if (!project) return;
+
+    // Bouton GitHub
+    const githubEl = document.querySelector('.modal-github');
+    if (project.github) {
+        githubEl.href = project.github;
+        githubEl.style.display = 'inline-flex';
+    } else {
+        githubEl.style.display = 'none';
+    }
+
+    // Bouton Visiter le site
+    const linkEl = document.querySelector('.modal-link');
+    if (project.link && project.link !== '#') {
+        linkEl.href = project.link;
+        linkEl.style.display = 'inline-flex';
+    } else {
+        linkEl.style.display = 'none';
+    }
 
     document.querySelector('.modal-number').textContent = project.number;
     document.querySelector('.modal-title').textContent = project.title;

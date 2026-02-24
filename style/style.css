@@ -922,7 +922,15 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     margin: 0;
 }
 
-.modal-link {
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.modal-link,
+.modal-github {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -932,7 +940,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     padding: 12px 24px;
     text-decoration: none;
     align-self: flex-start;
-    margin-top: auto;
+    margin-left: 15px;
 }
 
 .modal-link svg {
@@ -941,7 +949,13 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     transition: transform 0.3s ease;
 }
 
-.modal-link:hover svg { transform: translateX(4px); }
+.modal-github svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.modal-link:hover svg, .modal-github:hover svg { transform: translateX(4px); }
 
 
 /* PANEL 4 */
