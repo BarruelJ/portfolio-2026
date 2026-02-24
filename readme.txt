@@ -65,4 +65,4 @@ Les **icônes SVG** utilisées dans ce projet proviennent de Font Awesome Free (
 ## Contact
 
 **Joan Barruel** — Intégrateur Web — Gap, France  
-[Mail](j.barruel@icloud.com) [LinkedIn](#) · [GitHub](https://github.com/BarruelJ)
+[portfolio](https://portfolio-2026-lac-tau.vercel.app/) [LinkedIn](#) · [GitHub](https://github.com/BarruelJ)
