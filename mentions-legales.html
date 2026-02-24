@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions légales — Joan Barruel</title>
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link rel="preload" href="style/style.css" as="style">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/legal.css">
+</head>
+
+<body>
+
+    <button id="theme-toggle" aria-label="Changer de mode clair/sombre"></button>
+
+    <nav class="navbar" aria-label="Navigation principale">
+        <div class="logo-container">
+            <a href="index.html">
+                <span class="logo">JB Portfolio</span>
+                <span class="tagline">Intégrateur Web</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#projets" class="nav-item">Projets</a>
+            <a href="index.html#contact" class="nav-item btn-accent">Contact</a>
+        </div>
+    </nav>
+
+    <main class="legal-main" id="main-content">
+
+        <div class="legal-container">
+
+            <a href="index.html" class="legal-back">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+                </svg>
+                Retour au portfolio
+            </a>
+
+            <h1 class="legal-title">Mentions légales</h1>
+            <p class="legal-update">Dernière mise à jour : <time datetime="2025-01-01">Janvier 2025</time></p>
+
+            <section class="legal-section">
+                <h2>Éditeur du site</h2>
+                <p>Le présent site est édité par :</p>
+                <ul>
+                    <li><strong>Nom :</strong> Joan Barruel Brussin</li>
+                    <li><strong>Statut :</strong> Particulier</li>
+                    <li><strong>Localisation :</strong> Gap, 05000, France</li>
+                    <li><strong>Contact :</strong> <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#46;&#98;&#97;&#114;&#114;&#117;&#101;&#108;&#64;&#105;&#99;&#108;&#111;&#117;&#100;&#46;&#99;&#111;&#109;">&#106;&#46;&#98;&#97;&#114;&#114;&#117;&#101;&#108;&#64;&#105;&#99;&#108;&#111;&#117;&#100;&#46;&#99;&#111;&#109;</a></li>
+                </ul>
+            </section>
+
+            <section class="legal-section">
+                <h2>Hébergeur</h2>
+                <p>Ce site est hébergé par :</p>
+                <ul>
+                    <li><strong>Société :</strong> Vercel Inc.</li>
+                    <li><strong>Adresse :</strong> 340 Pine Street, Suite 701, San Francisco, CA 94104, États-Unis</li>
+                    <li><strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a></li>
+                </ul>
+            </section>
+
+            <section class="legal-section">
+                <h2>Propriété intellectuelle</h2>
+                <p>
+                    L'ensemble des contenus présents sur ce site (textes, images, code source, visuels) sont la propriété exclusive de Joan Barruel, sauf mention contraire.
+                    Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.
+                </p>
+            </section>
+
+            <section class="legal-section">
+                <h2>Données personnelles</h2>
+                <p>
+                    Ce site ne collecte aucune donnée personnelle directement. Aucun formulaire de contact embarqué ni cookie tiers n'est utilisé.
+                    Pour en savoir plus, consultez notre <a href="politique-confidentialite.html">politique de confidentialité</a>.
+                </p>
+            </section>
+
+            <section class="legal-section">
+                <h2>Responsabilité</h2>
+                <p>
+                    Joan Barruel s'efforce de maintenir les informations publiées sur ce site à jour et exactes.
+                    Toutefois, il ne saurait être tenu responsable des erreurs, omissions ou des résultats qui pourraient être obtenus par un mauvais usage de ces informations.
+                </p>
+            </section>
+
+            <section class="legal-section">
+                <h2>Droit applicable</h2>
+                <p>
+                    Ce site est soumis au droit français. Tout litige relatif à son utilisation sera soumis à la compétence des tribunaux français.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script/gsap.min.js"></script>
+    <script src="script/lenis.js"></script>
+    <script>
+        // Dark mode
+        const savedTheme = localStorage.getItem('portfolio-dark-mode');
+        if (savedTheme === 'true' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.body.classList.add('dark-mode');
+        }
+        document.getElementById('theme-toggle')?.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('portfolio-dark-mode', isDark);
+        });
+    </script>
+
+</body>
+</html>

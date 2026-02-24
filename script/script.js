@@ -451,7 +451,7 @@ function initMagnetic() {
     if (!isMD()) return; // pas sur mobile/tablette
 
     const targets = document.querySelectorAll(
-        '.card-cta, .btn-accent, .meta-item.clickable-badge, .modal-close, #theme-toggle, .hero-tagline a, .contact-cta'
+        '.card-cta, .btn-accent, .meta-item.clickable-badge, .modal-close, .hero-tagline a, .contact-cta, .contact-btn'
     );
 
     targets.forEach(el => {
