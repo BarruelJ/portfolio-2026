@@ -269,6 +269,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     display: flex;
     flex-direction: column;
     gap: 30px;
+    pointer-events: none;
 }
 
 /* Meta badges */
@@ -354,6 +355,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     background: var(--bg);
     border: var(--border-v);
     box-shadow: var(--shadow);
+    pointer-events: auto;
 }
 
 .about-title {
@@ -407,6 +409,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     background: var(--bg);
     border: var(--border-v);
     box-shadow: var(--shadow);
+    pointer-events: auto;
 }
 
 .cv-title {
@@ -480,6 +483,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     width: 100%;
     padding: 60px 20px 60px;
     position: relative;
+    pointer-events: auto;
 }
 
 .skills-header-wrapper {
@@ -504,6 +508,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    pointer-events: auto;
 }
 
 .skill-card {
@@ -1130,7 +1135,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
         flex-wrap: nowrap;
         justify-content: center;
         align-items: stretch;
-        pointer-events: auto;
+        pointer-events: none;
         gap: 0;
         padding: 0;
     }
@@ -1139,6 +1144,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
         flex: unset;
         width: 100%;
         will-change: transform;
+        pointer-events: auto;
     }
 
     .about-highlights li:hover {
@@ -1157,6 +1163,7 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
         will-change: transform;
         position: relative;
         z-index: 5;
+        pointer-events: auto;
     }
 
     .hero-top-meta  { justify-content: flex-start; margin-bottom: 30px; }
@@ -1177,11 +1184,11 @@ body.dark-mode #theme-toggle::before { content: '☼'; }
     .container-skills {
         width: 50%;
         padding: 0 80px;
-        pointer-events: none;
+        pointer-events: auto;
     }
 
     .section-title        { padding: 40px 0 40px 120px; }
-    .skills-header-wrapper { margin-bottom: 40px; }
+    .skills-header-wrapper { margin-bottom: 40px; pointer-events: none; }
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
