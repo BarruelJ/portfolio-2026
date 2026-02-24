@@ -28,7 +28,9 @@ const skillsWrapper = document.querySelector('.skills-header-wrapper');
 const skillCards = gsap.utils.toArray('.skill-card');
 const panel3 = document.querySelector('.panel-3');
 const titleWrapper = document.querySelector('.title-wrapper');
-const projectCards = gsap.utils.toArray('.project-card');
+
+// ProjectCards 
+let projectCards = [];
 
 // ScrollTriggers
 let triggers = [];
@@ -97,6 +99,68 @@ if (savedTheme === 'true' || (savedTheme === null && window.matchMedia('(prefers
 }
 
 themeBtn?.addEventListener('click', toggleTheme);
+
+const projectsData = {
+    1: {
+        title: 'Portfolio Interactif',
+        number: '01',
+        image: 'images/projet1.webp',
+        alt: 'Portfolio interactif avec animations GSAP',
+        tags: ['GSAP', 'ScrollTrigger', 'Lenis'],
+        description: 'Site vitrine personnel avec animations GSAP avancées, effet parallaxe et scroll fluide via Lenis.',
+        link: 'https://portfolio-2026-lac-tau.vercel.app/',
+        github: 'https://github.com/BarruelJ/portfolio-2026'
+    },
+    2: {
+        title: 'Site Vitrine',
+        number: '02',
+        image: 'images/projet2.webp',
+        alt: 'Site vitrine WordPress',
+        tags: ['WordPress', 'Kadence'],
+        description: "Création d'un site vitrine pour une entreprise d'isolation. Thème personnalisé avec Kadence.",
+        link: null,
+        github: null
+    },
+    3: {
+        title: 'Moteur de génération PDF',
+        number: '03',
+        image: 'images/projet3.webp',
+        alt: 'Moteur de génération de documents PDF dynamiques',
+        tags: ['TKinter', 'Reportlab', 'Python'],
+        description: "Générateur d'étiquettes et de documents PDF dynamiques avec interface graphique TKinter.",
+        link: null,
+        github: 'https://github.com/BarruelJ/PrintLoader'
+    },
+};
+
+function renderProjectCards() {
+    const grid = document.querySelector('.bento-grid');
+    if (!grid) return;
+
+    grid.innerHTML = Object.entries(projectsData).map(([id, project]) => `
+        <article class="project-card large" data-project="${id}">
+            <div class="card-image">
+                <img src="${project.image}" alt="${project.alt}"
+                    width="726" height="416" fetchpriority="high" decoding="async">
+                <div class="card-overlay" aria-hidden="true">
+                    <span class="project-number">${project.number}</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="project-title">${project.title}</h3>
+                <div class="project-tags" aria-label="Technologies utilisées">
+                    ${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                </div>
+                <button class="card-cta">
+                    <span>Voir le projet</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                        <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+                    </svg>
+                </button>
+            </div>
+        </article>
+    `).join('');
+}
 
 
 /* ANIMATIONS PANEL 2 */
@@ -309,34 +373,7 @@ const modal = document.getElementById('projectModal');
 const modalClose = document.querySelector('.modal-close');
 const modalBackdrop = document.querySelector('.modal-backdrop');
 
-const projectsData = {
-    1: {
-        title: 'Portfolio Interactif',
-        number: '01',
-        image: 'images/projet1.webp',
-        tags: ['GSAP', 'ScrollTrigger', 'Lenis'],
-        description: 'Site vitrine personnel avec animations GSAP avancées, effet parallaxe et scroll fluide via Lenis.',
-        link: 'https://portfolio-2026-lac-tau.vercel.app/',
-        github: 'https://github.com/BarruelJ/portfolio-2026'
-    },
-    2: {
-        title: 'Site Vitrine',
-        number: '02',
-        image: 'images/projet2.webp',
-        tags: ['WordPress', 'Kadence'],
-        description: "Création d'un site vitrine pour une entreprise d'isolation. Thème personnalisé avec Kadence.",
-        link: '#'
-    },
-    3: {
-        title: 'Moteur de génération PDF',
-        number: '03',
-        image: 'images/projet3.webp',
-        tags: ['TKinter', 'Reportlab', 'Python'],
-        description: "Générateur d'étiquettes et de documents PDF dynamiques avec interface graphique TKinter.",
-        link: '#',
-        github: 'https://github.com/BarruelJ/PrintLoader'
-    },
-};
+
 
 function openModal(projectId) {
     const project = projectsData[projectId];
@@ -363,7 +400,6 @@ function openModal(projectId) {
     document.querySelector('.modal-number').textContent = project.number;
     document.querySelector('.modal-title').textContent = project.title;
     document.querySelector('.modal-description').textContent = project.description;
-    document.querySelector('.modal-link').href = project.link;
 
     const img = document.querySelector('.modal-image img');
     img.src = project.image;
@@ -436,8 +472,10 @@ function initMagnetic() {
 /* ANCRES NAVIGATION */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
+        const href = anchor.getAttribute('href');
+        if (!href || !href.startsWith('#')) return; // Sécu fix propre
         e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
+        const target = document.querySelector(href);
         if (!target) return;
         lenis.scrollTo(target, { offset: -91, duration: 1.2 });
     });
@@ -446,6 +484,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* INIT & RESIZE */
 function init() {
     killAllTriggers();
+
+    renderProjectCards();
+
+    projectCards = gsap.utils.toArray('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', () => openModal(card.dataset.project));
+    });
 
     gsap.set([
         heroLeft, cvContainer, aboutContainer,
@@ -470,7 +516,7 @@ function init() {
 window.addEventListener('load', () => {
     init();
 
-    // Refresh après chargement
+     // Refresh
     const images = document.querySelectorAll('img');
     let loaded = 0;
     const onLoad = () => {
