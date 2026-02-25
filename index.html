@@ -23,7 +23,19 @@
 <body>
     <!-- SVG: Font Awesome Free (https://fontawesome.com) — Licence CC BY 4.0 -->
     <!-- DarkMod -->
-    <button id="theme-toggle" aria-label="Changer de mode clair/sombre"></button>
+    <button id="theme-toggle" aria-label="Changer de mode clair/sombre">
+        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor"
+            aria-hidden="true" width="28" height="28">
+            <!-- Lune par défaut -->
+            <path
+                d="M320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C388.8 576 451.3 548.8 497.3 504.6C504.6 497.6 506.7 486.7 502.6 477.5C498.5 468.3 488.9 462.6 478.8 463.4C473.9 463.8 469 464 464 464C362.4 464 280 381.6 280 280C280 207.9 321.5 145.4 382.1 115.2C391.2 110.7 396.4 100.9 395.2 90.8C394 80.7 386.6 72.5 376.7 70.3C358.4 66.2 339.4 64 320 64z" />
+        </svg>
+    </button>
+    <a id="github-toggle" href="https://github.com/BarruelJ" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor" aria-hidden="true">
+            <path
+                d="M316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72z" />
+        </svg></a>
 
     <!-- NAV -->
     <nav class="navbar" aria-label="Navigation principale">
@@ -398,10 +410,10 @@
                     </a>
                     <a href="https://github.com/BarruelJ" target="_blank" rel="noopener noreferrer"
                         class="contact-btn contact-btn--ghost">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"
                             aria-hidden="true">
                             <path
-                                d="M316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72z" />
+                                d="M253.4 57.6C142.5 57.6 57.6 141.8 57.6 252.8C57.6 341.5 113.4 417.4 193.2 444.2C203.4 446 207 440.7 207 436.5C207 429.5 206.8 405.8 206.8 385.4C206.8 385.4 150.8 397.4 139 361.5C139 361.5 129.9 338.2 116.8 332.2C116.8 332.2 98.5 319.7 118.1 319.9C118.1 319.9 138 321.5 148.9 340.6C166.5 371.4 195.8 362.6 207.3 357.3C209.1 344.5 214.3 335.6 220.1 329.5C175.4 325.4 130.2 319.7 130.2 241.9C130.2 219.9 136.3 208.9 149.1 194.8C147 189.6 140.2 168.2 151.2 140.5C167.9 135.3 206.4 162.1 206.4 162.1C222.4 157.6 239.6 155.3 256.6 155.3C273.7 155.3 290.9 157.6 306.9 162.1C306.9 162.1 345.4 135.2 362.1 140.5C373.1 168.2 366.2 189.6 364.2 194.8C376.9 208.9 384.8 220 384.8 241.9C384.8 319.9 338.7 325.3 293.9 329.5C301.5 335.8 307.8 347.8 307.8 367.4C307.8 394.4 307.5 429.4 307.5 436.3C307.5 440.5 311.2 445.8 321.4 443.6C400.2 416.7 454.4 340.8 454.4 252.8C454.4 141.8 364.3 57.6 253.4 57.6Z" />
                         </svg>
                         GITHUB
                     </a>
@@ -410,15 +422,15 @@
             </div>
 
             <footer class="site-footer">
-            <div class="footer-inner">
-                <span class="footer-copy">&copy; <span id="footer-year"></span> Joan Barruel — Tous droits
-                    réservés</span>
-                <nav class="footer-links" aria-label="Liens légaux">
-                    <a href="mentions-legales.html" class="footer-link">Mentions légales</a>
-                    <span class="footer-sep" aria-hidden="true">·</span>
-                    <a href="politique-confidentialite.html" class="footer-link">Politique de confidentialité</a>
-                </nav>
-            </div>
+                <div class="footer-inner">
+                    <span class="footer-copy">&copy; <span id="footer-year"></span> Joan Barruel — Tous droits
+                        réservés</span>
+                    <nav class="footer-links" aria-label="Liens légaux">
+                        <a href="mentions-legales.html" class="footer-link">Mentions légales</a>
+                        <span class="footer-sep" aria-hidden="true">·</span>
+                        <a href="politique-confidentialite.html" class="footer-link">Politique de confidentialité</a>
+                    </nav>
+                </div>
             </footer>
 
             <script>

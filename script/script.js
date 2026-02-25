@@ -86,17 +86,26 @@ function initTitleHover() {
     heroTitle.onmouseleave = () => titleTl.reverse();
 }
 
+const moonPath = "M320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C388.8 576 451.3 548.8 497.3 504.6C504.6 497.6 506.7 486.7 502.6 477.5C498.5 468.3 488.9 462.6 478.8 463.4C473.9 463.8 469 464 464 464C362.4 464 280 381.6 280 280C280 207.9 321.5 145.4 382.1 115.2C391.2 110.7 396.4 100.9 395.2 90.8C394 80.7 386.6 72.5 376.7 70.3C358.4 66.2 339.4 64 320 64z";
+const sunPath = "M320 192C375.228 192 420 236.772 420 292C420 347.228 375.228 392 320 392C264.772 392 220 347.228 220 292C220 236.772 264.772 192 320 192Z M344 134H296V0H344V134Z M344 640H296V506H344V640Z M134 344H0V296H134V344Z M640 344H506V296H640V344Z M212.904 178.62L184.62 206.904L91.7676 114.052L120.052 85.7676L212.904 178.62Z M555.232 114.052L462.38 206.904L434.096 178.62L526.948 85.7676L555.232 114.052Z M212.904 461.38L120.052 554.232L91.7676 525.948L184.62 433.096L212.904 461.38Z M555.232 525.948L526.948 554.232L434.096 461.38L462.38 433.096L555.232 525.948Z";
+const themeIcon = document.querySelector('#theme-toggle path');
+
+function updateThemeIcon(isDark) {
+    themeIcon?.setAttribute('d', isDark ? sunPath : moonPath);
+}
+
 function toggleTheme() {
     const isDark = document.body.classList.toggle('dark-mode');
     localStorage.setItem('portfolio-dark-mode', isDark);
+    updateThemeIcon(isDark);
     initTitleHover();
 }
 
 // Fixe flash thèmes clairs / sombres
 const savedTheme = localStorage.getItem('portfolio-dark-mode');
-if (savedTheme === 'true' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.body.classList.add('dark-mode');
-}
+const isDark = savedTheme === 'true' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+if (isDark) document.body.classList.add('dark-mode');
+updateThemeIcon(isDark);
 
 themeBtn?.addEventListener('click', toggleTheme);
 
@@ -298,7 +307,7 @@ function initSkillsResponsive() {
 function initProjectsAnimations() {
 
     // État initial
-    gsap.set(projectCards, { opacity: 0, y: 24 });
+    gsap.set(projectCards, { opacity: 1, y: 24 });
 
     if (isXL()) {
 
@@ -516,7 +525,7 @@ function init() {
 window.addEventListener('load', () => {
     init();
 
-     // Refresh
+    // Refresh
     const images = document.querySelectorAll('img');
     let loaded = 0;
     const onLoad = () => {
