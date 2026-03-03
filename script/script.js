@@ -131,9 +131,19 @@ const projectsData = {
         github: null
     },
     3: {
-        title: 'Moteur de génération PDF',
+        title: 'Site vitrine',
         number: '03',
         image: 'images/projet3.webp',
+        alt: 'Site vitrine Next.js avec Tailwind CSS',
+        tags: ['Next.js', 'Tailwind CSS'],
+        description: "Site vitrine réalisé avec Next.js et Tailwind CSS, outils de réservation multi-étapes.",
+        link: null,
+        github: 'https://github.com/BarruelJ/Site-vitrine-h-telier-Next.js-Tailwind-CSS'
+    },
+    4: {
+        title: 'Moteur de génération PDF',
+        number: '04',
+        image: 'images/projet4.webp',
         alt: 'Moteur de génération de documents PDF dynamiques',
         tags: ['TKinter', 'Reportlab', 'Python'],
         description: "Générateur d'étiquettes et de documents PDF dynamiques avec interface graphique TKinter.",
