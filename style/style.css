@@ -583,6 +583,7 @@ button {
     padding: 60px 20px 60px;
     position: relative;
     pointer-events: auto;
+    margin-bottom: 100vh;
 }
 
 .skills-header-wrapper {

@@ -26,33 +26,6 @@ Librairies GSAP et Lenis sont auto-hébergées.
 - Scroll ancré fluide via Lenis
 
 ---
-
-## Structure du projet
-
-portfolio/
-├── index.html
-├── mentions-legales.html
-├── politique-confidentialite.html
-├── style/
-│   ├── style.css
-│   └── legal.css
-├── script/
-│   ├── script.js
-│   ├── gsap.min.js
-│   ├── ScrollTrigger.min.js
-│   └── lenis.js
-├── images/
-│   ├── projet1.webp
-│   ├── projet2.webp
-│   └── projet3.webp
-├── fonts/
-│   ├── inter-v20-latin-regular.woff2
-│   ├── inter-v20-latin-700.woff2
-│   └── inter-v20-latin-900.woff2
-└── assets/
-    └── cv-joan-barruel.pdf
-
-
 ## Licence
 
 Le **code source** de ce projet est disponible librement
