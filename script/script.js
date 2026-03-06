@@ -15,9 +15,12 @@
 // Trigger
 const BREAKPOINT_XL = 1920;
 const BREAKPOINT_MD = 1024;
+const BREAKPOINT_SM = 768;
 
 const isXL = () => window.innerWidth >= BREAKPOINT_XL;
 const isMD = () => window.innerWidth >= BREAKPOINT_MD;
+const isSM = () => window.innerWidth >= BREAKPOINT_SM;
+
 
 // Éléments
 const heroLeft = document.querySelector('.hero-left');
@@ -111,6 +114,21 @@ if (isDark) document.body.classList.add('dark-mode');
 updateThemeIcon(isDark);
 
 themeBtn?.addEventListener('click', toggleTheme);
+
+const burgerBtn = document.querySelector('.btn-burger');
+const body = document.body;
+burgerBtn.addEventListener('click', () => {
+    body.classList.toggle('nav-open');
+    console.log('body = nav-open')
+});
+
+window.addEventListener('resize', () => {
+    if (isSM() && body.classList.contains('nav-open')) {
+        body.classList.remove('nav-open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+    }
+});
+
 
 const skillsData = [
     {
@@ -439,7 +457,7 @@ function initProjectsAnimations() {
         // Titre disparaît à l'arrivé du panel 4
         triggers.push(
             gsap.to(titleWrapper, {
-                y: -200, opacity: 1,
+                y: -250, opacity: 1,
                 ease: 'power2.in',
                 scrollTrigger: {
                     trigger: '.panel-4',
