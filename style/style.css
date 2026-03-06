@@ -174,8 +174,6 @@ body.nav-open .nav-links {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
-
 }
 
 .nav-item:hover {
@@ -1369,7 +1367,6 @@ body.nav-open .btn-burger span:nth-child(3) {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
 }
 
 .nav-item:hover {
