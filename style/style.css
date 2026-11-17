@@ -246,7 +246,8 @@ body.nav-open .btn-burger span:nth-child(3) {
     padding: 10px 20px;
     background: var(--accent);
     box-shadow: var(--shadow);
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), translate 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
@@ -256,7 +257,7 @@ body.nav-open .btn-burger span:nth-child(3) {
 .hero-tagline a h2:hover {
     background-color: var(--text);
     color: var(--accent);
-    transform: translate(4px, 4px);
+    translate: 4px 4px;
     box-shadow: -8px -8px 0px var(--accent);
     border: var(--border-v);
 }
@@ -657,7 +658,6 @@ body.nav-open .btn-burger span:nth-child(3) {
     padding: 60px 20px 60px;
     position: relative;
     pointer-events: auto;
-    margin-bottom: 100vh;
 }
 
 .skills-header-wrapper {
@@ -691,7 +691,7 @@ body.nav-open .btn-burger span:nth-child(3) {
     border: var(--border-v);
     padding: 28px;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, translate 0.3s ease;
     min-height: 180px;
     display: flex;
     flex-direction: column;
@@ -753,7 +753,7 @@ body.nav-open .btn-burger span:nth-child(3) {
 
 .skill-card:hover {
     background: var(--text);
-    transform: translate(4px, 4px);
+    translate: 4px 4px;
     box-shadow: -8px -8px 0px var(--accent);
 }
 
@@ -944,7 +944,8 @@ body.nav-open .btn-burger span:nth-child(3) {
     color: var(--text);
     border: var(--border-v);
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), translate 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 4px 4px 0 var(--text);
 }
 
@@ -957,7 +958,7 @@ body.nav-open .btn-burger span:nth-child(3) {
 .card-cta:hover {
     background-color: var(--text);
     color: var(--accent);
-    transform: translate(4px, 4px);
+    translate: 4px 4px;
     box-shadow: -6px -6px 0 var(--accent);
 }
 
@@ -977,13 +978,16 @@ body.nav-open .btn-burger span:nth-child(3) {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
 
 .project-modal.active {
     opacity: 1;
+    visibility: visible;
     pointer-events: all;
+    transition: opacity 0.4s ease, visibility 0s;
 }
 
 .modal-backdrop {
@@ -1026,7 +1030,8 @@ body.nav-open .btn-burger span:nth-child(3) {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), translate 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 4px 4px 0 var(--text);
 }
 
@@ -1038,7 +1043,7 @@ body.nav-open .btn-burger span:nth-child(3) {
 .modal-close:hover {
     background-color: var(--text);
     color: var(--accent);
-    transform: translate(4px, 4px);
+    translate: 4px 4px;
     box-shadow: -6px -6px 0 var(--accent);
 }
 
@@ -1199,7 +1204,8 @@ body.nav-open .btn-burger span:nth-child(3) {
     letter-spacing: 0.05em;
     border: var(--border-v);
     box-shadow: var(--shadow);
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), translate 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background: var(--accent);
     color: var(--text);
     cursor: pointer;
@@ -1213,7 +1219,7 @@ body.nav-open .btn-burger span:nth-child(3) {
 }
 
 .contact-btn:hover {
-    transform: translate(4px, 4px);
+    translate: 4px 4px;
     box-shadow: 0px 0px 0px var(--text);
     background: var(--text);
     color: var(--accent);
@@ -1680,6 +1686,8 @@ body.nav-open .btn-burger span:nth-child(3) {
         width: 50%;
         padding: 0 80px;
         pointer-events: auto;
+        /* Espace de scroll pour le pin du panel 1 (XL uniquement) */
+        margin-bottom: 100vh;
     }
 
     .section-title {
@@ -1750,5 +1758,35 @@ body.nav-open .btn-burger span:nth-child(3) {
 
     .modal-number {
         font-size: 3rem;
+    }
+}
+
+/* LENIS — CSS recommandé */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* MOUVEMENT RÉDUIT */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

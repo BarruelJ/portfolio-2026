@@ -218,46 +218,86 @@ function renderSkillsCards() {
 const projectsData = {
 
     1: {
-        title: 'Site vitrine',
+        title: 'JV Nutrisport',
         number: '01',
-        image: 'images/projet3.webp',
-        alt: 'Site vitrine Next.js avec Tailwind CSS',
-        tags: ['Next.js', 'Tailwind CSS'],
-        description: "Site vitrine réalisé avec Next.js et Tailwind CSS, outils de réservation multi-étapes.",
-        link: null,
-        github: 'https://github.com/BarruelJ/Site-vitrine-h-telier-Next.js-Tailwind-CSS'
+        image: 'images/jv-nutrisport.webp',
+        alt: "Site vitrine de JV Nutrisport, nutritionniste du sport",
+        tagline: "Site vitrine d'une nutritionniste du sport.",
+        tags: ['UI | UX', 'D.A', 'Design'],
+        description: "Site vitrine conçu pour présenter le travail d'une nutritionniste spécialisée dans la performance sportive. De la direction artistique aux interactions, chaque choix guide le visiteur et rend concrète la place de la nutrition dans la performance, la récupération et la progression.",
+        link: 'https://jv-site-nutrition.vercel.app/',
+        github: null
     },
     2: {
-        title: 'Portfolio Interactif',
+        title: 'Isolation Services & Environnement',
         number: '02',
-        image: 'images/projet1.webp',
-        alt: 'Portfolio interactif avec animations GSAP',
-        tags: ['GSAP', 'ScrollTrigger', 'Lenis'],
-        description: 'Site vitrine personnel avec animations GSAP avancées, effet parallaxe et scroll fluide via Lenis.',
-        link: 'https://portfolio-2026-lac-tau.vercel.app/',
-        github: 'https://github.com/BarruelJ/portfolio-2026'
-    },
-    3: {
-        title: 'Site Vitrine',
-        number: '03',
-        image: 'images/projet2.webp',
-        alt: 'Site vitrine WordPress',
-        tags: ['WordPress', 'Kadence'],
-        description: "Création d'un site vitrine pour une entreprise d'isolation. Thème personnalisé avec Kadence.",
+        image: 'images/ise.webp',
+        alt: "Site vitrine d'Isolation Services & Environnement",
+        tagline: "Site vitrine d'une entreprise d'isolation.",
+        tags: ['UI | UX', 'Web conception'],
+        description: "Identité et site vitrine construits sur la réalité du terrain : isolation thermique, acoustique et sécurité incendie. Les contrastes et la mise en page traduisent la rigueur des chantiers, en laissant une place centrale aux réalisations et à l'engagement de l'entreprise.",
         link: null,
         github: null
     },
+    3: {
+        title: 'Hotel & Horizon',
+        number: '03',
+        image: 'images/hotel-horizon.webp',
+        alt: "Étude de cas Hotel & Horizon, site hôtelier avec module de réservation",
+        tagline: "Étude de cas : site hôtelier avec réservation.",
+        tags: ['Next.js', 'Tailwind CSS', 'UI | UX'],
+        description: "Projet concept explorant le design hôtelier haut de gamme : design épuré, couleurs apaisantes, information réduite à l'essentiel. Le module de réservation multi-étapes s'intègre naturellement au parcours, pour démontrer la conception d'interfaces complexes.",
+        link: 'https://hotelhorizonhotel.vercel.app/',
+        github: 'https://github.com/BarruelJ/Site-vitrine-h-telier-Next.js-Tailwind-CSS'
+    },
     4: {
-        title: 'Moteur de génération PDF',
+        title: 'Perrine Garcin',
         number: '04',
-        image: 'images/projet4.webp',
-        alt: 'Moteur de génération de documents PDF dynamiques',
-        tags: ['TKinter', 'Reportlab', 'Python'],
-        description: "Générateur d'étiquettes et de documents PDF dynamiques avec interface graphique TKinter.",
+        image: 'images/perrine-garcin.webp',
+        alt: "Identité visuelle de Perrine Garcin, naturopathe réflexologue",
+        tagline: "Refonte de l'identité visuelle d'une naturopathe.",
+        tags: ['Identité visuelle', 'Logo', 'Charte'],
+        description: "Refonte du logo d'une naturopathe réflexologue : monogramme PG, ovale organique et silhouette qui se déploie. Gris anthracite, vert sauge, Lora et Inter, déclinés sur l'icône, les cartes de visite, la signature mail et la charte graphique.",
         link: null,
-        github: 'https://github.com/BarruelJ/PrintLoader'
+        github: null
+    },
+    5: {
+        title: 'ALTek',
+        number: '05',
+        image: 'images/altek.webp',
+        alt: "Logo et bannière de la chaîne YouTube ALTek",
+        tagline: "Refonte du logo d'une chaîne YouTube tech & DIY.",
+        tags: ['Identité visuelle', 'Logo', 'YouTube'],
+        description: "Nouvelle identité pour une chaîne YouTube tech, DIY et homelab : monogramme « A » en formes géométriques biseautées, décliné en wordmark, avatar clair/sombre et bannière. Un noir et blanc franc, lisible même en très petit format.",
+        link: 'https://www.youtube.com/@ALTekFR',
+        linkLabel: 'Voir la chaîne YouTube',
+        github: null
+    },
+    6: {
+        title: 'Portfolio Interactif',
+        number: '06',
+        image: 'images/jb-portfolio.webp',
+        alt: 'Portfolio interactif avec animations GSAP',
+        tagline: 'Portfolio avec animations GSAP et scroll fluide.',
+        tags: ['GSAP', 'ScrollTrigger', 'Lenis'],
+        description: "Portfolio pensé comme une expérience de lecture continue, où le mouvement accompagne sans distraire. Animations GSAP, scroll fluide via Lenis et bascule clair/sombre naturelle, pour une interface qui s'efface au profit du contenu.",
+        link: 'https://portfolio-2026-lac-tau.vercel.app/',
+        github: 'https://github.com/BarruelJ/portfolio-2026'
     },
 };
+
+// Liste "Projets récents" du panneau CV, générée depuis projectsData
+function renderCvProjects() {
+    const list = document.querySelector('.cv-projects');
+    if (!list) return;
+
+    list.innerHTML = Object.values(projectsData).map(project => `
+        <div class="cv-item">
+            <h5>${project.title}</h5>
+            <p>${project.tagline}</p>
+        </div>
+    `).join('');
+}
 
 function renderProjectCards() {
     const grid = document.querySelector('.bento-grid');
@@ -267,7 +307,7 @@ function renderProjectCards() {
         <article class="project-card large" data-project="${id}">
             <div class="card-image">
                 <img src="${project.image}" alt="${project.alt}"
-                    width="726" height="416" fetchpriority="high" decoding="async">
+                    width="1280" height="720" loading="lazy" decoding="async">
                 <div class="card-overlay" aria-hidden="true">
                     <span class="project-number">${project.number}</span>
                 </div>
@@ -518,6 +558,8 @@ function openModal(projectId) {
     const linkEl = document.querySelector('.modal-link');
     if (project.link && project.link !== '#') {
         linkEl.href = project.link;
+        // Libellé personnalisable (ex : chaîne YouTube)
+        linkEl.firstChild.textContent = (project.linkLabel || 'Visiter le site') + ' ';
         linkEl.style.display = 'inline-flex';
     } else {
         linkEl.style.display = 'none';
@@ -612,6 +654,7 @@ function init() {
     killAllTriggers();
 
     renderProjectCards();
+    renderCvProjects();
     renderSkillsCards();
 
     skillCards = gsap.utils.toArray('.skill-card');
